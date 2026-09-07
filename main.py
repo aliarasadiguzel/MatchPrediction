@@ -19,6 +19,9 @@ def get_team_data():
     team_value = float(input("Enter team's squad value (in millions): "))
 
     team_value_score = min(team_value / 10, 100)
+   
+    if team_value <= 0:
+        print("Squad value must be greater than 0.")
 
     home_advantage = input("Is the team playing at home? (yes/no): ").lower()
 
@@ -59,7 +62,7 @@ team1_odds = round(1 / team1_probability, 2)
 draw_odds = round(1 / draw_probability, 2)
 team2_odds = round(1 / team2_probability, 2)
 
-print(f"{team1[0]}: {team1_odds}")
+print(f"\n {team1[0]}: {team1_odds}")
 print(f"Draw: {draw_odds}")
 print(f"{team2[0]}: {team2_odds}")
 
